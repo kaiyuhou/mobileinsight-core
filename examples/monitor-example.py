@@ -29,9 +29,9 @@ if __name__ == "__main__":
     src.enable_log("WCDMA_RRC_Serv_Cell_Info")
 
     # Dump the messages to std I/O. Comment it if it is not needed.
-    dumper = MsgLogger()
-    dumper.set_source(src)
-    dumper.set_decoding(MsgLogger.XML)  # decode the message as xml
+    # dumper = MsgLogger()
+    # dumper.set_source(src)
+    # dumper.set_decoding(MsgLogger.XML)  # decode the message as xml
 
     # Start the monitoring
     src.run()
