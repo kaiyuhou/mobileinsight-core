@@ -78,6 +78,7 @@ class AndroidMtkMonitor(Monitor):
     def __init__(self, prefs={}):
 
         Monitor.__init__(self)
+        self.log_info("AndroidMtkMonitor Init")
 
         self._input_dir = os.path.join(
             get_cache_dir(), "mi2log")  # ??? getCacheDir()

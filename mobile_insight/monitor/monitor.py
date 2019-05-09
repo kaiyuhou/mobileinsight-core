@@ -18,6 +18,7 @@ class Monitor(Element):
     def __init__(self):
         # No source for Monitor
         Element.__init__(self)
+        self.log_info("Monitor init")
 
         self._skip_decoding = False
 

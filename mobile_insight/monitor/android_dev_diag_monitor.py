@@ -197,6 +197,7 @@ class AndroidDevDiagMonitor(Monitor):
         This method should be called before any actual decoding.
         """
         Monitor.__init__(self)
+        self.log_info("AndroidDevDiagMonitor Init")
         self._fifo_path = self.TMP_FIFO_FILE
         self._input_dir = os.path.join(get_cache_dir(), "mi2log")
         self._log_cut_size = 0.5  # change size to 1.0 M
