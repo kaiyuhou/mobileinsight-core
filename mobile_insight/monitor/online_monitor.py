@@ -69,7 +69,7 @@ try:
 
     
     chipset_type = get_chipset_type()
-    print "chipset_type",chipset_type
+    print "chipset_type",chipset_type # this line does work
 
     if chipset_type == ChipsetType.QUALCOMM:
         from android_dev_diag_monitor import AndroidDevDiagMonitor

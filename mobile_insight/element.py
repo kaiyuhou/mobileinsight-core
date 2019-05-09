@@ -92,6 +92,7 @@ class Element(object):
 
         # setup the logs
         self.set_log("")
+        self.log_info('Element is inited here')
 
     def send(self, event):
         """
