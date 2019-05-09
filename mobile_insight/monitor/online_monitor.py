@@ -158,4 +158,5 @@ except Exception as e:
 
     class OnlineMonitor(DMCollector):
         def __init__(self):
+            print("Online Monitor, Exception")
             DMCollector.__init__(self)
