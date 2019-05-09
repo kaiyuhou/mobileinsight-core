@@ -160,3 +160,4 @@ except Exception as e:
         def __init__(self):
             print("Online Monitor, Exception")
             DMCollector.__init__(self)
+            self.log_info("Online Monitor, Exception")
