@@ -40,6 +40,7 @@ class DMCollector(Monitor):
         :type prefs: dictionary
         """
         Monitor.__init__(self)
+        print('DMCollector Init')
 
         self.phy_baudrate = 9600
         self.phy_ser_name = None
