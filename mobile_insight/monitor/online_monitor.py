@@ -76,6 +76,8 @@ try:
         class OnlineMonitor(AndroidDevDiagMonitor):
             def __init__(self):
                 AndroidDevDiagMonitor.__init__(self)
+                print("Online Monitor QUALCOMM")
+                self.log_info("Online Monitor QUALCOMM")
         
             def set_serial_port(self, phy_ser_name):
                 """
@@ -99,6 +101,8 @@ try:
         class OnlineMonitor(AndroidMtkMonitor):
             def __init__(self):
                 AndroidMtkMonitor.__init__(self)
+                print("Online Monitor AndroidMtkMonitor")
+                self.log_info("Online Monitor AndroidMtkMonitor")
         
             def set_serial_port(self, phy_ser_name):
                 """
@@ -122,6 +126,7 @@ try:
         class OnlineMonitor(Monitor):
             def __init__(self):
                 Monitor.__init__(self)
+                print("Unsupported chipset type")
                 self.log_warning("Unsupported chipset type")
         
             def set_serial_port(self, phy_ser_name):
