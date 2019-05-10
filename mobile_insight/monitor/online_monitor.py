@@ -153,11 +153,13 @@ except Exception as e:
     # print str(traceback.format_exc())
 
     # not used, but bugs may exist on laptop
+    print(e)
+
     from dm_collector.dm_collector import DMCollector
     is_android = False
 
     class OnlineMonitor(DMCollector):
         def __init__(self):
-            print("Online Monitor, Exception")
             DMCollector.__init__(self)
+            print("Online Monitor, Exception")
             self.log_info("Online Monitor, Exception")
