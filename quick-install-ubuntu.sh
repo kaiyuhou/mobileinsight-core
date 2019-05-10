@@ -19,7 +19,7 @@ echo "  Usage  : ./install-ubuntu.sh"
 echo " "
 
 echo "Upgrading MobileInsight..."
-yes | ./uninstall.sh
+#yes | ./uninstall.sh
 
 # Wireshark version to install
 ws_ver=2.0.13
@@ -132,11 +132,11 @@ cd ${MOBILEINSIGHT_PATH}
 echo "Installing mobileinsight-core using sudo, your password may be required..."
 sudo ${PYTHON} setup.py install
 
-echo "Installing GUI for MobileInsight..."
-cd ${MOBILEINSIGHT_PATH}
-sudo mkdir -p ${PREFIX}/share/mobileinsight/
-sudo cp -r gui/* ${PREFIX}/share/mobileinsight/
-sudo ln -s ${PREFIX}/share/mobileinsight/mi-gui ${PREFIX}/bin/mi-gui
+#echo "Installing GUI for MobileInsight..."
+#cd ${MOBILEINSIGHT_PATH}
+#sudo mkdir -p ${PREFIX}/share/mobileinsight/
+#sudo cp -r gui/* ${PREFIX}/share/mobileinsight/
+#sudo ln -s ${PREFIX}/share/mobileinsight/mi-gui ${PREFIX}/bin/mi-gui
 
 #echo "Testing the MobileInsight offline analysis example."
 #cd ${MOBILEINSIGHT_PATH}/examples
