@@ -96,9 +96,9 @@ FindWiresharkLibrary=true
 #
 #fi
 
-echo "Reload ldconfig cache, your password may be required..."
-sudo rm /etc/ld.so.cache
-sudo ldconfig
+#echo "Reload ldconfig cache, your password may be required..."
+#sudo rm /etc/ld.so.cache
+#sudo ldconfig
 
 #echo "Compiling Wireshark dissector for mobileinsight..."
 #cd ${MOBILEINSIGHT_PATH}/ws_dissector
