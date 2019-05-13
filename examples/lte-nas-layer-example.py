@@ -31,8 +31,8 @@ if __name__ == "__main__":
     nas_analyzer.set_source(src)
 
     # save the analysis result. All analyzers share the same output file.
-    dumper.set_log("nas-analyzer-example.txt")
-    nas_analyzer.set_log("nas-analyzer-example.txt")
+    dumper.set_log("./nas-analyzer-example.txt")
+    nas_analyzer.set_log("./nas-analyzer-example.txt")
 
     # Start the monitoring
     src.run()
