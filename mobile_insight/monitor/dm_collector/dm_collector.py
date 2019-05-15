@@ -33,7 +33,7 @@ class DMCollector(Monitor):
 
     def __init__(self, prefs={}):
         """
-        Configure this class with user preferences.
+        Configure this class with enl preferences.
         This method should be called before any actual decoding.
 
         :param prefs: configurations for message decoder. Empty by default.

@@ -5,6 +5,8 @@ prune dist
 recursive-include dm_collector_c *.cpp *.h
 recursive-include examples *.json *.py *.mi2log *.mi2app *.txt
 recursive-exclude examples *.db *.pyo
+recursive-include user *.json *.py *.mi2log *.mi2app *.txt
+recursive-exclude user *.db *.pyo
 recursive-include gui *
 include install-macos.sh
 include install-ubuntu.sh

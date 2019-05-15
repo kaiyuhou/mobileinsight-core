@@ -193,7 +193,7 @@ class AndroidDevDiagMonitor(Monitor):
 
     def __init__(self):
         """
-        Configure this class with user preferences.
+        Configure this class with enl preferences.
         This method should be called before any actual decoding.
         """
         Monitor.__init__(self)
@@ -335,7 +335,7 @@ class AndroidDevDiagMonitor(Monitor):
         """
         Initialize diag_revealer with correct parameters
         """
-        # TODO(likayo): need to protect aganist user input
+        # TODO(likayo): need to protect aganist enl input
         cmd = "%s %s %s" % (self._executable_path, os.path.join(
             self.DIAG_CFG_DIR, "Diag.cfg"), self._fifo_path)
         cmd += " %s %.6f" % (self._input_dir, self._log_cut_size)

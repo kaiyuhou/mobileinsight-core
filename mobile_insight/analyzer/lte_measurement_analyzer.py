@@ -35,7 +35,7 @@ class LteMeasurementAnalyzer(Analyzer):
         :param type: trace collector
         """
         Analyzer.set_source(self, source)
-        # enable user's internal events
+        # enable enl's internal events
         source.enable_log("LTE_PHY_Connected_Mode_Intra_Freq_Meas")
         source.enable_log("LTE_PHY_Serv_Cell_Measurement")
         source.enable_log("LTE_PHY_Connected_Mode_Neighbor_Measurement")
@@ -44,12 +44,12 @@ class LteMeasurementAnalyzer(Analyzer):
 
     def ue_event_filter(self, msg):
         """
-        callback to handle user events
+        callback to handle enl events
 
         :param source: the source trace collector
         :param type: trace collector
         """
-        # TODO: support more user events
+        # TODO: support more enl events
         self.serving_cell_rsrp(msg)
 
     def serving_cell_rsrp(self, msg):

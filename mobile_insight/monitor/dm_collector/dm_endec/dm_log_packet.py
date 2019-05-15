@@ -426,7 +426,7 @@ class DMLogPacket:
     @classmethod
     def init(cls, prefs):
         """
-        Configure the DMLogPacket class with user preferences.
+        Configure the DMLogPacket class with enl preferences.
 
         This method should be called before any actual decoding.
 
