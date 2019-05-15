@@ -16,7 +16,7 @@ def get_log_path():
     return "/home/kaiyu/mi-dev/mobileinsight-core/logs/"
 
 
-def get_file_name(carrier, phone):
+def get_file_name(carrier, phone, case=''):
     local_time = time.localtime()
     file_name = []
 
@@ -28,6 +28,9 @@ def get_file_name(carrier, phone):
     file_name.append(str(local_time.tm_hour) + str(local_time.tm_min) + str(local_time.tm_sec))
     file_name.append(carrier)
     file_name.append(phone)
+
+    if case:
+        file_name.append(case)
 
     return get_log_path() + '_'.join(file_name) + '.mi2log'
 

@@ -1,14 +1,13 @@
-#!/usr/bin/python
-# Filename: monitor-example.py
 import os
 import sys
+import utils
 
 # Import MobileInsight modules
 from mobile_insight.monitor import OnlineMonitor
 from mobile_insight.analyzer import MsgLogger
 
 if __name__ == "__main__":
-    file_in = "/home/kaiyu/mi-dev/mobileinsight-core/logs/monitor-example.mi2log"
+    file_in = utils.get_file_name(utils.Carrier.Verizon, utils.Cell_Phone.RedMi_Note4X)
     file_out = file_in + '.xml'
 
     if len(sys.argv) < 3:
