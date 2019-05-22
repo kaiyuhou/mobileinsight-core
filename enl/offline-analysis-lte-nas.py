@@ -7,23 +7,18 @@ from mobile_insight.analyzer import MsgLogger, LteRrcAnalyzer, WcdmaRrcAnalyzer,
 
 if __name__ == "__main__":
     src = OfflineReplayer()
-    src.set_input_path("../logs/monitor-example.mi2log")
-
-    # input_file = utils.get_log_path() + 'monitor-example.mi2log'
-    # print(input_file)
-    # # output_file = input_file + ".xml"
-    #
-
-
+    src.set_input_path(enl.get_log_path() + "monitor-example.mi2log")
+    # src.save_log_as(enl.get_log_path() + 'test_xml.xml')
 
     # # #
     lte_nas_analyzer = LteNasAnalyzer()
     lte_nas_analyzer.set_source(src)
+    lte_nas_analyzer.create_callflow_state_machine()
 
     print("Hello World")
-    dumper = MsgLogger()
-    dumper.set_source(src)
-    dumper.set_decoding(MsgLogger.XML)
+    # dumper = MsgLogger()
+    # dumper.set_source(src)
+    # dumper.set_decoding(MsgLogger.XML)
 
     # # # # umts_nas_analyzer = UmtsNasAnalyzer()
     # # # # umts_nas_analyzer.set_source(src)

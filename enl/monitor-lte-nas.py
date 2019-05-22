@@ -1,12 +1,12 @@
 import sys
-import utils
+import utils_enl
 
 # Import MobileInsight modules
 from mobile_insight.monitor import OnlineMonitor
 from mobile_insight.analyzer import MsgLogger
 
 if __name__ == "__main__":
-    file_in = utils.get_file_name(utils.Carrier.Verizon, utils.Cell_Phone.RedMi_Note4X)
+    file_in = utils_enl.get_file_name(utils_enl.Carrier.Verizon, utils_enl.Cell_Phone.RedMi_Note4X)
     file_out = file_in + '.xml'
 
     if len(sys.argv) < 3:
@@ -21,20 +21,9 @@ if __name__ == "__main__":
     # Save the monitoring results as an offline log
     src.save_log_as(file_in)
 
-    # Enable 3G/4G messages to be monitored. Here we enable RRC (radio
-    src.enable_log("LTE_NAS_EMM_OTA_Incoming_Packet")
-    src.enable_log("LTE_NAS_EMM_OTA_Outgoing_Packet")
-    src.enable_log("LTE_NAS_EMM_State")
-    src.enable_log("LTE_NAS_ESM_OTA_Incoming_Packet")
-    src.enable_log("LTE_NAS_ESM_OTA_Incoming_Packet")
-    src.enable_log("LTE_NAS_ESM_OTA_Incoming_Packet")
-    src.enable_log("LTE_NAS_ESM_OTA_Outgoing_Packet")
-    src.enable_log("LTE_NAS_ESM_State")
+    utils_enl.enable_nas_log(src)
 
-    # Dump the messages to std I/O. Comment it if it is not needed.
     logger = MsgLogger()
-
-    # logger.set_decode_format(MsgLogger.JSON)
     logger.set_decode_format(MsgLogger.XML)
     logger.set_dump_type(MsgLogger.FILE_ONLY)
     logger.save_decoded_msg_as(file_out)
