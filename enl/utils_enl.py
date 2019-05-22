@@ -1,4 +1,6 @@
 import time
+import platform
+import os
 
 
 class Carrier():
@@ -13,6 +15,9 @@ class Cell_Phone():
 
 
 def get_log_path():
+    if platform.system() == 'Windows':
+        return 'D:/workspace/mobileinsight-core/logs/'
+
     return "/home/kaiyu/mi-dev/mobileinsight-core/logs/"
 
 
@@ -56,6 +61,6 @@ def file_name_xml(name):
 
 
 if __name__ == '__main__':
-    print(file_name_mi2(Carrier.Verizon, Cell_Phone.RedMi_Note4X))
-    print(file_name_xml(file_name_mi2(Carrier.Verizon, Cell_Phone.RedMi_Note4X)))
-
+    # print(file_name_mi2(Carrier.Verizon, Cell_Phone.RedMi_Note4X))
+    # print(file_name_xml(file_name_mi2(Carrier.Verizon, Cell_Phone.RedMi_Note4X)))
+    print(get_log_path())
