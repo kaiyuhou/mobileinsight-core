@@ -1,10 +1,6 @@
 import xml.etree.ElementTree as ET
 import utils_enl
 
-# file_name = utils_enl.get_log_path() + 'xml_0521_20532_Verizon_RedMi-Note4X.xml'
-# file_name = utils_enl.get_log_path() + 'xml_0521_192011_Verizon_RedMi-Note4X.xml'
-file_name = utils_enl.get_log_path() + 'xml_0521_193046_Verizon_RedMi-Note4X.xml'
-
 log_pair_key = ['log_msg_len', 'type_id', 'timestamp']
 
 message_type_id =['LTE_NAS_EMM_State',
@@ -179,6 +175,16 @@ def simple_message(S):
         'ipcp.opt.pri_dns_address, ': '',
         '\n\tipcp.opt.sec_dns_address, ': '\t',
         'DNS Address': 'DNS',
+        'nas_eps.nas_msg_esm_type, NAS EPS session management messages: ': '',
+        'gsm_a.dtap.emergency_bcd_num, ': '** ',
+        'gsm_a.dtap.emergency_number_information, ': '** ',
+        'gsm_a.dtap.serv_cat_b5, ...1 .... = ': '** ',
+        'gsm_a.dtap.serv_cat_b4, .... 1... = ': '** ',
+        'gsm_a.dtap.serv_cat_b3, .... .1.. = ': '** ',
+        'gsm_a.dtap.serv_cat_b2, .... ..1. = ': '** ',
+        'gsm_a.dtap.serv_cat_b1, .... ...1 = ': '** ',
+        'gsm_a.dtap.emerg_num_info_length, ': '** ',
+
     }
 
     for k,v in simple.items():
@@ -186,22 +192,36 @@ def simple_message(S):
     return S
 
 
-if __name__ == '__main__':
+def remove_ans_value(ans):
+    for p in ans:
+        for i in range(len(p)):
+            if len(p[i]) == 3:
+                p[i] = p[i][:-1]
+    return ans
+
+def xml_analysis_pipeline(file_in):
     et = ET.fromstring('<mi2>' + '</mi2>')
     ans = []
-    with open(file_name) as f:
+    with open(file_in) as f:
         et = ET.fromstring('<mi2>' + f.read() + '</mi2>')
     for dm_packet in et.getchildren():
         pairs = dm_packet.getchildren()
         ans.append(parse_dm_packet(pairs))
 
     ans = remove_redundant_packet(ans)
+    ans = remove_ans_value(ans)
 
     ans_string = ans_to_string(ans)
     ans_string = strip_punctuation(ans_string)
     ans_string = simple_message(ans_string)
 
-    print(ans_string)
+    return ans_string
+
+if __name__ == '__main__':
+    # file_name = utils_enl.get_log_path() + 'xml_0521_20532_Verizon_RedMi-Note4X.xml'
+    # file_name = utils_enl.get_log_path() + 'xml_0521_192011_Verizon_RedMi-Note4X.xml'
+    file_name = utils_enl.get_log_path() + 'xml_0521_193046_Verizon_RedMi-Note4X.xml'
+    print(xml_analysis_pipeline(file_name))
 
 
 
