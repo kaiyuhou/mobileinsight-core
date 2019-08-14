@@ -8,6 +8,7 @@ class Carrier():
     ATT = 'ATT'
     TMobile = 'TMobile'
     Sprint = 'Sprint'
+    CM = 'CM'
 
 
 class Cell_Phone():
@@ -27,16 +28,12 @@ def time_to_str(t):
     else:
         return str(t)
 
+
 def file_name_mi2(carrier, phone, case=''):
     local_time = time.localtime()
     file_name = ['mi2']
 
-    if local_time.tm_mon < 10:
-        file_name.append('0' + str(local_time.tm_mon) + str(local_time.tm_mday))
-    else:
-        file_name.append(str(local_time.tm_mon) + str(local_time.tm_mday))
-
-
+    file_name.append(time_to_str(local_time.tm_mon) + time_to_str(local_time.tm_mday))
     file_name.append(time_to_str(local_time.tm_hour) + time_to_str(local_time.tm_min) + time_to_str(local_time.tm_sec))
     file_name.append(carrier)
     file_name.append(phone)
@@ -44,7 +41,18 @@ def file_name_mi2(carrier, phone, case=''):
     if case:
         file_name.append(case)
 
-    return get_log_path() + '_'.join(file_name) + '.mi2log'
+    filename = get_log_path() + '_'.join(file_name) + '.mi2log'
+
+    with open(get_log_path() + 'record.csv', 'a') as f:
+        record = []
+        record.append(filename.split('/')[-1])
+        record.append(carrier)
+        record.append(phone)
+        record.append(case)
+        f.write(','.join(record))
+        f.write('\n')
+
+    return filename
 
 
 def enable_nas_log(src):
@@ -62,5 +70,5 @@ def file_name_xml(name):
 
 if __name__ == '__main__':
     # print(file_name_mi2(Carrier.Verizon, Cell_Phone.RedMi_Note4X))
-    # print(file_name_xml(file_name_mi2(Carrier.Verizon, Cell_Phone.RedMi_Note4X)))
-    print(get_log_path())
+    print(file_name_xml(file_name_mi2(Carrier.Verizon, Cell_Phone.RedMi_Note4X)))
+    # print(get_log_path())

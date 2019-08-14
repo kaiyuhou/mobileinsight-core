@@ -6,8 +6,10 @@ from mobile_insight.monitor import OnlineMonitor
 from mobile_insight.analyzer import MsgLogger
 
 if __name__ == "__main__":
-    file_in = utils_enl.get_file_name(utils_enl.Carrier.Verizon, utils_enl.Cell_Phone.RedMi_Note4X)
-    file_out = file_in + '.xml'
+    file_in = utils_enl.file_name_mi2(utils_enl.Carrier.TMobile, utils_enl.Cell_Phone.RedMi_Note4X)
+    file_out = utils_enl.file_name_xml(file_in)
+
+
 
     if len(sys.argv) < 3:
         print "Error: please specify physical port name and baudrate."
@@ -25,7 +27,7 @@ if __name__ == "__main__":
 
     logger = MsgLogger()
     logger.set_decode_format(MsgLogger.XML)
-    logger.set_dump_type(MsgLogger.FILE_ONLY)
+    logger.set_dump_type(MsgLogger.ALL)
     logger.save_decoded_msg_as(file_out)
     logger.set_source(src)
 

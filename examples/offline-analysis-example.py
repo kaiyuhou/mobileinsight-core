@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     # Initialize a 3G/4G monitor
     src = OfflineReplayer()
-    src.set_input_path("./offline_log_example.mi2log")
+    src.set_input_path("/home/kaiyu/mi-dev/mobileinsight-core/examples/offline_log_example.mi2log")
 
     logger = MsgLogger()
     logger.set_decode_format(MsgLogger.XML)

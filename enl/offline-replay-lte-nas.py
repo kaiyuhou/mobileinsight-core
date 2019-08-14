@@ -8,8 +8,10 @@ if __name__ == "__main__":
 
     # Initialize a 3G/4G monitor
     src = OfflineReplayer()
-    src.set_input_path(get_log_path() + "monitor-example.mi2log")
-    src.save_log_as(get_log_path() + "filtered_log.mi2log")
+    src.set_input_path(get_log_path() + "mi2_0521_192011_Verizon_RedMi-Note4X.mi2log")
+    # src.save_log_as(get_log_path() + "filtered_log.mi2log")
+
+    print(get_log_path())
 
     enable_nas_log(src)
 

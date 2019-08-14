@@ -38,7 +38,10 @@ LTE_NAS_Packet_keywords = ['nas_eps.nas_msg_emm_type',
                            'gsm_a.dtap.serv_cat_b2',
                            'gsm_a.dtap.serv_cat_b1',
                            'gsm_a.dtap.emergency_bcd_num',
-                           'nas_eps.security_header_type']
+                           'nas_eps.security_header_type',
+                           'gsm_a.ie.mobileid.type',
+                           'gsm_a.imeisv',
+                           'gsm_a.tmsi',]
 
 message_keywords = {
             'LTE_NAS_EMM_State': LTE_NAS_EMM_State_keywords,
@@ -220,7 +223,8 @@ def xml_analysis_pipeline(file_in):
 if __name__ == '__main__':
     # file_name = utils_enl.get_log_path() + 'xml_0521_20532_Verizon_RedMi-Note4X.xml'
     # file_name = utils_enl.get_log_path() + 'xml_0521_192011_Verizon_RedMi-Note4X.xml'
-    file_name = utils_enl.get_log_path() + 'xml_0521_193046_Verizon_RedMi-Note4X.xml'
+    #file_name = utils_enl.get_log_path() + 'xml_0521_193046_Verizon_RedMi-Note4X.xml'
+    file_name = utils_enl.get_log_path() + 'xml_0602_234331_CM_RedMi-Note4X.xml'
     print(xml_analysis_pipeline(file_name))
 
 
