@@ -1,0 +1,10 @@
+File_Name, Carrier, Phone, Note
+mi2_0602_224207_Verizon_RedMi-Note4X.mi2log,Verizon,RedMi-Note4X, 'Full normal attach. GUTI:151515-1515 -> PLMN 311-480. EN 911. All True'
+mi2_0602_230258_ATT_RedMi-Note4X.mi2log,ATT,RedMi-Note4X, 'Full normal attach. GUTI: 310-410->310410. No EN '
+mi2_0602_233517_TMobile_RedMi-Note4X.mi2log,TMobile,RedMi-Note4X, 'Nothing'
+mi2_0602_234331_CM_RedMi-Note4X.mi2log,CM,RedMi-Note4X, 'CM 310-260 TM -> 310-410. No EN. CM DNS'
+mi2_0602_235301_CM_RedMi-Note4X.mi2log,CM,RedMi-Note4X,
+mi2_0726_194533_TMobile_RedMi-Note4X.mi2log,TMobile,RedMi-Note4X,
+mi2_0726_194823_TMobile_RedMi-Note4X.mi2log,TMobile,RedMi-Note4X,
+mi2_0726_201935_TMobile_RedMi-Note4X.mi2log,TMobile,RedMi-Note4X,
+mi2_0726_202522_TMobile_RedMi-Note4X.mi2log,TMobile,RedMi-Note4X,
