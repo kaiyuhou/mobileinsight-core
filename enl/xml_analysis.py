@@ -206,6 +206,7 @@ def xml_analysis_pipeline(file_in):
     et = ET.fromstring('<mi2>' + '</mi2>')
     ans = []
     with open(file_in) as f:
+        # print(f.read())
         et = ET.fromstring('<mi2>' + f.read() + '</mi2>')
     for dm_packet in et.getchildren():
         pairs = dm_packet.getchildren()
