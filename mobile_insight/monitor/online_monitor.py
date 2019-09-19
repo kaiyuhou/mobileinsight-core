@@ -152,9 +152,10 @@ except Exception as e:
     # import traceback
     # print str(traceback.format_exc())
 
+
     # not used, but bugs may exist on laptop
-    print("Exception", e)
-    print(e)
+    print("Exception in online_monitor", e)
+    print(repr(e))
 
     from dm_collector.dm_collector import DMCollector
     is_android = False

@@ -97,6 +97,9 @@ class WSDissector:
             if ws_library_path:
                 env["LD_LIBRARY_PATH"] = ws_library_path + \
                     ":" + env.get("LD_LIBRARY_PATH", "")
+                print("real_executable_path", real_executable_path)
+
+        print("real_executable_path", str(real_executable_path))
         cls._proc = subprocess.Popen([real_executable_path],
                                      bufsize=-1,
                                      stdin=subprocess.PIPE,
